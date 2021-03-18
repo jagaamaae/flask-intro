@@ -12,8 +12,7 @@ AWESOMENESS = [
     'wonderful', 'smashing', 'lovely']
 
 MEANNESS = [
-    'stinky', 'lame', 'the worst', 'stupid',
-    'ugly']
+     "meh", "bad", "the worst"]
 
 
 @app.route('/')
@@ -121,17 +120,17 @@ def display_insult_form():
     option_template = '<option value="{insult}">{insult}</option>'
     if level == 1:
         option_elements = [
-            option_template.format(insult=insult) for insult in MEANNESS[:3]
+            option_template.format(insult=insult) for insult in MEANNESS[1]
         ]
 
     elif level == 2:
         option_elements = [
-            option_template.format(insult=insult) for insult in MEANNESS[3:6]
+            option_template.format(insult=insult) for insult in MEANNESS[2]
         ]
 
     else:
         option_elements = [
-            option_template.insult(insult=insult) for insult in MEANNESS[6:]
+            option_template.insult(insult=insult) for insult in MEANNESS[3]
         ]
 
     return """
